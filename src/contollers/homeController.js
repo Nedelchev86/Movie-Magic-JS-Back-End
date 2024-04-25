@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const movie = require("../services/movieService");
+const movies = require("../services/movieService");
 
 router.get("/", (req, res) => {
-    res.render("home", {movie});
+    res.render("home", {movies});
 });
 
 module.exports = router;

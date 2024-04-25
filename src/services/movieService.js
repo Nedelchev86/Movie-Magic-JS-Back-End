@@ -1,4 +1,4 @@
-const movie = [
+const movies = [
     {
         _id: 1,
         title: "Tihomir Nedelchev",
@@ -7,9 +7,8 @@ const movie = [
         year: "2002",
         imageURL: "/img/jungle-cruise.jpeg",
         rating: "5",
-        description: "Neshto si"
-    }
-]
+        description: "Neshto si",
+    },
+];
 
-
-module.exports  = movie;
+module.exports = movies;
