@@ -1,8 +1,20 @@
 const router = require("express").Router();
 const movies = require("../services/movieService");
+const movieService = require("../services/movieService");
 
 router.get("/create", (req, res) => {
     res.render("create");
+});
+
+router.post("/create", async (req, res) => {
+    const newMovie = req.body;
+    try {
+        await movieService.create(newMovie);
+        res.redirect("/");
+    } catch (err) {
+        console.log(err);
+        res.redirect("/404")
+    }
 });
 
 router.get("/search", (req, res) => {

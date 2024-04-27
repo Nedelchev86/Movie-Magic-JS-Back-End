@@ -1,14 +1,12 @@
-const movies = [
-    {
-        _id: 1,
-        title: "Tihomir Nedelchev",
-        genre: "action",
-        director: "Soyo",
-        year: "2002",
-        imageURL: "/img/jungle-cruise.jpeg",
-        rating: "5",
-        description: "Neshto si",
-    },
-];
+const Movie = require("../models/Movies");
 
-module.exports = movies;
+exports.create = async (movieData) => {
+    const result = await Movie.create(movieData);
+    console.log(result);
+    return result;
+};
+
+exports.getAll = (movieData) => {
+    const movies = Movie.find();
+    return movies;
+};
